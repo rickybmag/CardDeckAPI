@@ -1,0 +1,15 @@
+﻿@model Hand
+<h3>Cards Remaining: @Model.remaining</h3>
+<br />
+@foreach (Card c in Model.cards)
+{    
+<div style="display:inline-block">
+    <img src="@c.image" />
+    <p>@c.value of @c.suit</p>
+</div>
+}
+
+<form asp-action="Result" method="post">
+    <p>Draw 5 More</p>
+    <input type="submit" value="Play Again" />
+</form>
